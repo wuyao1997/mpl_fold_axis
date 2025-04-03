@@ -151,10 +151,10 @@ def add_fold_line(
 
     def _plot_axspan(axspan_func):
         if which == "both":
-            rect = axspan_func(low, up, -0.01, 1.01, **span_kwargs)
+            rect = axspan_func(low, up, -0.02, 1.02, **span_kwargs)
             rectangles.append(rect)
         else:
-            _min, _max = (-0.01, 0.01) if (which == "lower") else (0.99, 1.01)
+            _min, _max = (-0.02, 0.02) if (which == "lower") else (0.98, 1.02)
             rect1 = axspan_func(low, up, zorder=2.4, color="w", lw=0)
             rect2 = axspan_func(low, up, _min, _max, **span_kwargs)
             rectangles.extend([rect1, rect2])

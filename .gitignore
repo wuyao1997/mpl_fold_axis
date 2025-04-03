@@ -1,0 +1,4 @@
+_*
+build/
+dist/
+*.egg-info/
