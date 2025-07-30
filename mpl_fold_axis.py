@@ -278,13 +278,8 @@ def fold_axis(
     ax: Axes,
     interval: list[Tuple[float, float, float]],
     axis: Literal["x", "y"] = "x",
-    which: Literal["lower", "upper", "both"] = "lower",
     mode: Literal["linear", "log"] = "linear",
-    lw: float = 1,
-    d: float = 1.0,
-    color: str = "k",
-    span_color: str = "w",
-    size: int = 10,
+    **kwargs
 ) -> Tuple[list[list[Line2D]], list[list[Rectangle]]]:
     """Fold the axis of axes by the given interval and factor.
 
@@ -333,7 +328,7 @@ def fold_axis(
 
     lines, rectangles = [], []
     for a, b, _ in interval:
-        l, r = add_fold_line(ax, (a, b), axis=axis, which=which)
+        l, r = add_fold_line(ax, (a, b), axis=axis, **kwargs)
         lines.append(l)
         rectangles.append(r)
 
